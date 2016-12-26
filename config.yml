@@ -1,0 +1,25 @@
+production:
+  app_host: <%= ENV['APP_HOST'] %>
+  app_protocol: http
+
+  activemerchant_billing_mode: test
+
+  paypal:
+    paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr?
+    paypal_login: YOUR_PAYPAL_LOGIN
+    paypal_password: YOUR_PAYPAL_PASSWORD
+    paypal_signature: YOUR_PAYPAL_SIGNATURE
+    paypal_business: YOUR_PAYPAL_BUSINESS
+
+  wkhtmltopdf_path: "/usr/local/bundle/bin/wkhtmltopdf" #run "which wkhtmltopdf" you will get path
+
+  smtp_setting:
+     address: 'smtp.gmail.com'
+     port: 587
+     authentication: :plain
+     enable_starttls_auto: true
+     user_name: 'YOUR_EMAIL_HERE'
+     password: 'YOUR_PASSWORD_HERE'
+
+
+  encryption_key: "someRandomAmazingShit"

@@ -1,0 +1,10 @@
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: osb_prod
+  pool: 5
+  username: osb
+  password: password
+  host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] %>
+  port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] %>

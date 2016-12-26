@@ -1,0 +1,21 @@
+web:
+  restart: always
+  build: .
+  command: rails server -e production
+  environment:
+    - SECRET_KEY_BASE=someRandomString
+    - APP_HOST=osb.amazingAwesomeWebsite.com
+  ports:
+    - "3000:3000"
+  links:
+    - mysql:mysql
+
+mysql:
+  restart: always
+  image: sameersbn/mysql:latest
+  environment:
+    - DB_USER=osb
+    - DB_PASS=password
+    - DB_NAME=osb_prod
+  volumes:
+    - /srv/docker/osb/mysql:/var/lib/mysql
